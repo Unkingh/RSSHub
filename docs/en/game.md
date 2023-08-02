@@ -15,16 +15,18 @@ Categories
 | Category               | Slug                |
 | ---------------------- | ------------------- |
 | All News               |                     |
+| Diablo II: Resurrected | diablo2             |
 | Diablo III             | diablo3             |
 | Diablo IV              | diablo4             |
 | Diablo: Immortal       | diablo-immortal     |
 | Hearthstone            | hearthstone         |
 | Heroes of the Storm    | heroes-of-the-storm |
-| Overwatch              | overwatch           |
+| Overwatch 2            | overwatch           |
 | StarCraft: Remastered  | starcraft           |
 | StarCraft II           | starcraft2          |
 | World of Warcraft      | world-of-warcraft   |
 | Warcraft III: Reforged | warcraft3           |
+| Battle.net             | battlenet           |
 | BlizzCon               | blizzcon            |
 | Inside Blizzard        | blizzard            |
 
@@ -32,21 +34,20 @@ Language codes
 
 | Language       | Code  |
 | -------------- | ----- |
-| Deutsch        | de-de |
-| English (US)   | en-us |
-| English (EU)   | en-gb |
-| Español (EU)   | es-es |
-| Español (AL)   | es-mx |
-| Français       | fr-fr |
-| Italiano       | it-it |
-| Português (AL) | pt-br |
-| Polski         | pl-pl |
-| Русский        | ru-ru |
-| 한국어         | ko-kr |
-| ภาษาไทย        | th-th |
-| 日本語         | ja-jp |
-| 繁體中文       | zh-tw |
-| 简体中文       | zh-cn |
+| Deutsch        | de-de    |
+| English (US)   | en-us    |
+| English (EU)   | en-gb    |
+| Español (EU)   | es-es    |
+| Español (Latino)   | es-mx    |
+| Français       | fr-fr    |
+| Italiano       | it-it    |
+| Português (Brasil) | pt-br    |
+| Polski         | pl-pl    |
+| Русский        | ru-ru    |
+| 한국어          | ko-kr    |
+| ภาษาไทย        | th-th    |
+| 日本語          | ja-jp    |
+| 繁體中文        | zh-tw    |
 
 </RouteEn>
 
@@ -60,7 +61,7 @@ Language codes
 
 ### Free games
 
-<RouteEn author="Zyx-A" example="/epicgames/freegames" path="/epicgames/freegames"/>
+<RouteEn author="Zyx-A nczitzk  KotaHv" example="/epicgames/freegames" path="/epicgames/freegames/:locale?/:country?" :paramsDesc="['Locale, en_US by default', 'Country, en_US by default']"/>
 
 ## FINAL FANTASY XIV
 
@@ -78,6 +79,20 @@ Category
 
 | all | topics | notices | maintenance | updates | status   | developers |
 | --- | ------ | ------- | ----------- | ------- | -------- | ---------- |
+
+</RouteEn>
+
+## Fortnite
+
+### News
+
+<RouteEn author="lyqluis" example="/fortnite/news" path="/fortnite/news/:options?" :paramsDesc="['Params']" radar="1" puppeteer="1">
+
+-   `options.lang`, optional, language, eg. `/fortnite/news/lang=en-US`, common languages are listed below, more languages are available one the [official website](https://www.fortnite.com/news)
+
+| English (default) | Spanish | Japanese | French | Korean | Polish |
+| ----------------- | ------- | -------- | ------ | ------ | ------ |
+| en-US             | es-ES   | ja       | fr     | ko     | pl     |
 
 </RouteEn>
 
@@ -114,6 +129,40 @@ Or
 | category/xbox | category/xboxen |
 
 </RouteEn>
+
+## itch.io
+
+### Browse
+
+<RouteEn author="nczitzk" example="/itch/games/new-and-popular/featured" path="/itch/:params?" :paramsDesc="['Params']">
+
+`params` is the field after `itch.io` in the URL of the corresponding page, e.g. the URL of [Top Rated Games tagged Singleplayer](https://itch.io/games/top-rated/tag-singleplayer) is <https://itch.io/games/top-rated/tag-singleplayer>, where the field after `itch.io` is `/games/top-rated/tag-singleplayer`.
+
+So the route is [`/itch/games/top-rated/tag-singleplayer`](https://rsshub.app/itch/games/top-rated/tag-singleplayer).
+
+::: tip tips
+
+You can browse all the tags at [here](https://itch.io/tags).
+
+:::
+
+</RouteEn>
+
+### Developer Logs
+
+<RouteEn author="nczitzk" example="/itch/devlog/teamterrible/the-baby-in-yellow" path="/itch/devlog/:user/:id" :paramsDesc="['User id, can be found in URL', 'Item id, can be found in URL']">
+
+`User id` is the field before `.itch.io` in the URL of the corresponding page, e.g. the URL of [The Baby In Yellow Devlog](https://teamterrible.itch.io/the-baby-in-yellow/devlog) is <https://teamterrible.itch.io/the-baby-in-yellow/devlog>, where the field before `.itch.io` is `teamterrible`.
+
+`Item id` is the field between `itch.io` and `/devlog` in the URL of the corresponding page, e.g. the URL for [The Baby In Yellow Devlog](https://teamterrible.itch.io/the-baby-in-yellow/devlog) is <https://teamterrible.itch.io/the-baby-in-yellow/devlog>, where the field between `itch.io` and `/devlog` is `the-baby-in-yellow`.
+
+So the route is [`/itch/devlogs/teamterrible/the-baby-in-yellow`](https://rsshub.app/itch/devlogs/teamterrible/the-baby-in-yellow).
+
+</RouteEn>
+
+### Posts
+
+<RouteEn author="nczitzk" example="/itch/posts/9539/introduce-yourself" path="/itch/posts/:topic/:id" :paramsDesc="['Topic id, can be found in URL', 'Topic name, can be found in URL']"/>
 
 ## Konami
 
@@ -221,7 +270,7 @@ Compatible with Product with an URL like <https://store.playstation.com/en-us/pr
 
 ### Steam search
 
-<RouteEn author="maple3142" example="/steam/search/specials=1&term=atelier" path="/steam/search/:params" :paramsDesc="['search parameters']" radar="1" rssbud="1">
+<RouteEn author="maple3142" example="/steam/search/specials=1" path="/steam/search/:params" :paramsDesc="['search parameters']" radar="1" rssbud="1">
 
 Get serach parameters from the URL.
 
@@ -235,9 +284,9 @@ For instance, in `https://store.steampowered.com/search/?specials=1&term=atelier
 
 Steam provides some official RSS feeds:
 
-- News home page: [https://store.steampowered.com/feeds/news/?l=english](https://store.steampowered.com/feeds/news/?l=english) the parameter `l=english` specifiy the language.
-- Game news rss can get from the rss buttom in page like this: [https://store.steampowered.com/news/app/648800/](https://store.steampowered.com/news/app/648800/), rss link will looks like： [https://store.steampowered.com/feeds/news/app/648800/?cc=US&l=english](https://store.steampowered.com/feeds/news/app/648800/?cc=US&l=english)
-- Steam group can add `/rss` behind Steam community URL to subscribe: [https://steamcommunity.com/groups/SteamLabs/rss](https://steamcommunity.com/groups/SteamLabs/rss) or add the `/feeds` in Steam News : [https://store.steampowered.com/feeds/news/group/35143931/](https://store.steampowered.com/feeds/news/group/35143931/)
+-   News home page: [https://store.steampowered.com/feeds/news/?l=english](https://store.steampowered.com/feeds/news/?l=english) the parameter `l=english` specifiy the language.
+-   Game news rss can get from the rss buttom in page like this: [https://store.steampowered.com/news/app/648800/](https://store.steampowered.com/news/app/648800/), rss link will looks like： [https://store.steampowered.com/feeds/news/app/648800/?cc=US&l=english](https://store.steampowered.com/feeds/news/app/648800/?cc=US&l=english)
+-   Steam group can add `/rss` behind Steam community URL to subscribe: [https://steamcommunity.com/groups/SteamLabs/rss](https://steamcommunity.com/groups/SteamLabs/rss) or add the `/feeds` in Steam News : [https://store.steampowered.com/feeds/news/group/35143931/](https://store.steampowered.com/feeds/news/group/35143931/)
 
 :::
 
@@ -246,3 +295,72 @@ Steam provides some official RSS feeds:
 ### Discussions
 
 <RouteEn author="whtsky" example="/steamgifts/discussions" path="/steamgifts/discussions/:category?" :paramsDesc="['category name, default to All']"/>
+
+## TapTap International
+
+::: warning Warning
+
+Due to the regional restrictions, an RSSHub deployment in China Mainland may not work on accessing the TapTap International Website.
+
+:::
+
+### Game Topics
+
+::: tip Tips
+
+Unlike TapTap China Mainland Website, the International Website has no BBS.
+
+:::
+
+### Game's Changelog
+
+<RouteEn author="hoilc ETiV" example="/taptap/intl/changelog/191001/zh_TW" path="/taptap/intl/changelog/:id/:lang?" :paramsDesc="['Game\'s App ID, you may find it from the URL of the Game', 'Language, checkout the table below for possible values, default is `en_US`']">
+
+#### Language Code
+
+| English (US) | 繁體中文 | 한국어 | 日本語 |
+| ----- | ----- | ----- | ----- |
+| en_US | zh_TW | ko_KR | ja_JP |
+
+</RouteEn>
+
+### Ratings & Reviews
+
+<RouteEn author="hoilc TonyRL ETiV" example="/taptap/intl/review/82354/new/zh_TW" path="/taptap/intl/review/:id/:order?/:lang?" :paramsDesc="['Game\'s App ID, you may find it from the URL of the Game', 'Sort Method, you may use `new` as the **Most Recent**, use `default` or leave it empty for the **Most Relevant**', 'Language, checkout the table below for possible values, default is `en_US`']">
+
+#### Sort Method
+
+| Most Relevant  | Most Recent |
+| -------------- | ---- |
+| default        | new  |
+
+#### Language Code
+
+| English (US) | 繁體中文 | 한국어 | 日本語 |
+| ----- | ----- | ----- | ----- |
+| en_US | zh_TW | ko_KR | ja_JP |
+
+</RouteEn>
+
+## War Thunder
+
+### News
+
+<RouteEn author="axojhf" example="/warthunder/news" path="/warthunder/news">
+
+News data from <https://warthunder.com/en/news/>
+The year, month and day provided under UTC time zone are the same as the official website, so please ignore the specific time!!!
+
+</RouteEn>
+
+## ファミ通
+
+### Category
+
+<RouteEn author="TonyRL" example="/famitsu/category/new-article" path="/famitsu/category/:category?" :paramsDesc="['Category, see table below, `new-article` by default']" radar="1">
+
+| 新着          | PS5 | Switch | PS4 | ニュース | ゲームニュース   | PR TIMES | 動画     | 特集・企画記事         | インタビュー    | 取材・リポート      | レビュー   | インディーゲーム   |
+| ----------- | --- | ------ | --- | ---- | --------- | -------- | ------ | --------------- | --------- | ------------ | ------ | ---------- |
+| new-article | ps5 | switch | ps4 | news | news-game | prtimes  | videos | special-article | interview | event-report | review | indie-game |
+
+</RouteEn>

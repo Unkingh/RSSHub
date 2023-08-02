@@ -4,6 +4,12 @@ pageClass: routes
 
 # 程序更新
 
+## Amazon
+
+### Kindle 软件更新
+
+<Route author="NavePnow" example="/amazon/kindle/software-updates" path="/amazon/kindle/software-updates" radar="1"/>
+
 ## AMD
 
 ### 显卡驱动更新
@@ -13,6 +19,12 @@ pageClass: routes
 可从设备管理器查看 id 和 rid。如 `PCI\VEN_1002&DEV_731F&SUBSYS_05771043&REV_C1`，则 id 为 `731F`，rid 为 `C1`。
 
 </Route>
+
+## Android
+
+### SDK Platform Tools release notes
+
+<Route author="nczitzk" example="/android/platform-tools-releases" path="/android/platform-tools-releases"/>
 
 ## Anki
 
@@ -26,11 +38,11 @@ pageClass: routes
 
 <Route author="nczitzk" example="/anytxt/release-notes" path="/anytxt/release-notes"/>
 
-## Apkpure
+## APKPure
 
-### Versions
+### 所有版本
 
-<Route author="maple3142" example="/apkpure/versions/jp/jp.co.craftegg.band" path="/apkpure/versions/:region/:pkg" :paramsDesc="['區域代號', 'package name']"/>
+<Route author="maple3142" example="/apkpure/versions/jp.co.craftegg.band/jp" path="/apkpure/versions/:pkg/:region?" :paramsDesc="['包名稱', '區域代號，預設為 `en`']" radar="1" anticrawler="1" puppeteer="1"/>
 
 ## App Center
 
@@ -89,8 +101,8 @@ pageClass: routes
 语言
 
 | English | 中文 (简体) | 中文 (繁體) | 日本語 | Русский | Español | Français | Deutsch | Italiano | Slovenčina | Українська | Беларуская | Dansk | Polski | Português Brasileiro | Čeština | Nederlands | Slovenščina | Türkçe | ภาษาไทย | 한국어 |
-| ------- | ------- | ------- | --- | ------- | ------- | -------- | ------- | -------- | ---------- | ---------- | ---------- | ----- | ------ | -------------------- | ------- | ---------- | ----------- | ------ | ------- | --- |
-| en      | cn      | tw      | jp  | ru      | es      | fr       | de      | it       | sk         | uk         | be         | da    | pl     | br                   | cs      | nl         | sl          | tr     | th      | kr  |
+| ------- | ----------- | ----------- | ------ | ------- | ------- | -------- | ------- | -------- | ---------- | ---------- | ---------- | ----- | ------ | -------------------- | ------- | ---------- | ----------- | ------ | ------- | ------ |
+| en      | cn          | tw          | jp     | ru      | es      | fr       | de      | it       | sk         | uk         | be         | da    | pl     | br                   | cs      | nl         | sl          | tr     | th      | kr     |
 
 </Route>
 
@@ -100,9 +112,21 @@ pageClass: routes
 
 <Route author="nczitzk" example="/bilibili/app/android" path="/bilibili/app/:id?" :paramsDesc="['客户端 id，见下表，默认为安卓版']">
 
-| 安卓版     | iPhone 版 | iPad HD 版 | UWP 版 | TV 版           |
-| ------- | -------- | --------- | ----- | -------------- |
-| android | iphone   | ipad      | win   | android_tv_yst |
+| 安卓版  | iPhone 版 | iPad HD 版 | UWP 版 | TV 版          |
+| ------- | --------- | ---------- | ------ | -------------- |
+| android | iphone    | ipad       | win    | android_tv_yst |
+
+## BlueStacks
+
+### BlueStacks 5 版本日誌
+
+<Route author="TonyRL" example="/bluestacks/release/5" path="/bluestacks/release/5" radar="1" anticrawler="1" puppeteer="1"/>
+
+## Brave
+
+### Release Notes
+
+<Route author="nczitzk" example="/brave/latest" path="/brave/latest"/>
 
 ## Bugly SDK
 
@@ -133,6 +157,34 @@ pageClass: routes
 ### 扩展程序更新
 
 <Route author="DIYgod" example="/chrome/webstore/extensions/kefjpfngnndepjbopdmoebkipbgkggaa" path="/chrome/webstore/extensions/:id" :paramsDesc="['扩展程序 id, 可在应用页 URL 中找到']" />
+
+## Civitai
+
+### Latest models
+
+<Route author="DIYgod" example="/civitai/models" path="/civitai/models"/>
+
+### Model discussions
+
+::: warning 注意
+
+需要配置 `CIVITAI_COOKIE` 才可获取 NSFW 模型的图片信息
+
+:::
+
+<Route author="DIYgod" example="/civitai/discussions/4384" path="/civitai/discussions/:modelId"/>
+
+## Clash
+
+### Premium Releases
+
+<Route author="ttttmr" example="/clash/premium" path="/clash/premium" radar="1" />
+
+## CPUID
+
+### 新闻
+
+<Route author="TonyRL" example="/cpuid/news" path="/cpuid/news" radar="1" rssbud="1"/>
 
 ## cpython
 
@@ -195,8 +247,8 @@ pageClass: routes
 语言
 
 | 简体中文 | 繁体中文 | 英文 |
-| ---- | ---- | -- |
-| cn   | tw   | en |
+| -------- | -------- | ---- |
+| cn       | tw       | en   |
 
 </Route>
 
@@ -224,7 +276,7 @@ pageClass: routes
 
 <Route author="fengkx" example="/firefox/release/desktop" path="/firefox/release/:platform" :paramsDesc="['操作平台']">
 
-| 桌面      | Android | Beta | Nightly | Android Beta | ESR           |
+| 桌面    | Android | Beta | Nightly | Android Beta | ESR           |
 | ------- | ------- | ---- | ------- | ------------ | ------------- |
 | desktop | android | beta | nightly | android-beta | organizations |
 
@@ -234,11 +286,31 @@ pageClass: routes
 
 <Route author="DIYgod" example="/firefox/addons/rsshub-radar" path="/firefox/addons/:id" :paramsDesc="['附加组件 id, 可在应用页 URL 中找到']" />
 
+## fish shell
+
+### Release Notes
+
+<Route author="x2cf" example="/fishshell" path="/fishshell" radar="1" />
+
+## FossHub
+
+### Software Update
+
+<Route author="nczitzk" example="/fosshub/qBittorrent" path="/fosshub/:id" :paramsDesc="['软件 id，可在对应软件页 URL 中找到']"/>
+
 ## Greasy Fork
 
 ### 脚本更新
 
-<Route author="imlonghao" example="/greasyfork/zh-CN/bilibili.com" path="/greasyfork/:language/:domain?" :paramsDesc="['语言, 可在网站右上角找到, `all` 为所有语言', '按脚本生效域名过滤, 可选']"/>
+<Route author="imlonghao" example="/greasyfork/zh-CN/bilibili.com" path="/greasyfork/:language/:domain?" :paramsDesc="['语言, 可在网站右上角找到, `all` 为所有语言', '按脚本生效域名过滤, 可选']" radar="1"/>
+
+### 脚本版本历史
+
+<Route author="miles170" example="/greasyfork/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列/versions" path="/greasyfork/scripts/:script/versions" :paramsDesc="['脚本 id，可在对应脚本页 URL 中找到']" radar="1" />
+
+### 脚本反馈
+
+<Route author="miles170" example="/greasyfork/scripts/14178-ac-baidu-重定向优化百度搜狗谷歌必应搜索-favicon-双列/feedback" path="/greasyfork/scripts/:script/feedback" :paramsDesc="['脚本 id，可在对应脚本页 URL 中找到']" radar="1" />
 
 ## Hugo
 
@@ -246,17 +318,44 @@ pageClass: routes
 
 <Route author="maokwen" example="/hugo/releases" path="/hugo/releases"/>
 
+## iFi audio
+
+### Download Hub
+
+<Route author="NavePnow" example="/ifi-audio/download/1503007035/44472" path="/ifi-audio/download/:val/:id" :paramsDesc="['商品 val', '商品 id']"/>
+
+::: warning 注意
+
+1.  打开网站 <https://ifi-audio.com/download-hub> 并打开 Inspect -> Network 调试面板
+2.  在网站中选择设备以及对应的 serial number，点击搜索
+3.  在 Network 面板中找到最后一个 <https://ifi-audio.com/wp-admin/admin-ajax.php> 请求，查看 Payload 中的 val 和 id，填写在 url 中
+
+:::
+
+## ImageMagick
+
+### Changelog
+
+<Route author="nczitzk" example="/imagemagick/changelog" path="/imagemagick/changelog"/>
+
+## Infuse
+
+### Release Notes
+
+<Route author="NathanDai" example="/firecore/ios" path="/firecore/:os" :paramsDesc="['`ios`,`tvos`,`macos`']"/>
+
 ## IPSW\.me
 
 ### 苹果固件更新 - IPSWs/OTAs 版本
 
-<Route author="Jeason0228" example="/ipsw/index/ipsws/iPhone11,8" path="/ipsw/index/:ptype/:pname/" :paramsDesc="['填写ipsws或otas,得到不同版本的固件','产品名, `http://rsshub.app/ipsw/index/ipsws/iPod`如填写iPad则关注iPad整个系列(ptype选填为ipsws).`http://rsshub.app/ipsw/index/ipsws/iPhone11,8`如果填写具体的iPhone11,8则关注这个机型的ipsws固件信息']"/>
+<Route author="Jeason0228" example="/ipsw/index/ipsws/iPhone11,8" path="/ipsw/index/:ptype/:pname/" :paramsDesc="['填写ipsws或otas，得到不同版本的固件','产品名，`http://rsshub.app/ipsw/index/ipsws/iPod`如填写iPad则关注iPad整个系列(ptype选填为ipsws).`http://rsshub.app/ipsw/index/ipsws/iPhone11,8`如果填写具体的iPhone11,8则关注这个机型的ipsws固件信息']"/>
 
 ## Logseq
 
-### Changelog
-
-<Route author="nczitzk" example="/logseq/changelog" path="/logseq/changelog"/>
+::: warning
+Logseq 开发团队已经放弃了 [旧网站](https://logseq.com/blog)。
+请使用 <https://github.com/logseq/logseq/releases.atom> 代替。
+:::
 
 ## MacKed
 
@@ -264,11 +363,17 @@ pageClass: routes
 
 <Route author="HXHL" example="/macked/app/cleanmymac-x" path="/macked/app/:name" :paramsDesc="['应用名, 可在应用页 URL 中找到']"/>
 
+## MacUpdate
+
+### 更新
+
+<Route author="TonyRL" example="/macupdate/app/11942" path="/macupdate/app/:appId/:appSlug?" :paramsDesc="['应用 ID，可在 URL 找到', '应用名，可在 URL 找到']" radar="1"/>
+
 ## MacWk
 
 ### 应用更新
 
-<Route author="f48vj" example="/macwk/soft/sublime-text" path="/macwk/soft/:name" :paramsDesc="['应用名, 可在应用页 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="f48vj" example="/macwk/soft/sublime-text" path="/macwk/soft/:name" :paramsDesc="['应用名，可在应用页 URL 中找到']" radar="1" rssbud="1"/>
 
 ## ManicTime
 
@@ -282,7 +387,7 @@ pageClass: routes
 
 ### 外接程序更新
 
-<Route author="hoilc" example="/edge/addon/gangkeiaobmjcjokiofpkfpcobpbmnln" path="/edge/addon/:crxid" :paramsDesc="['扩展 id, 可在扩展页 URL 中找到']" />
+<Route author="hoilc" example="/edge/addon/gangkeiaobmjcjokiofpkfpcobpbmnln" path="/edge/addon/:crxid" :paramsDesc="['扩展 id，可在扩展页 URL 中找到']" />
 
 ## Microsoft Store
 
@@ -300,23 +405,35 @@ pageClass: routes
 
 <Route author="Indexyz" example="/miui/aries" path="/miui/:device/:type?/:region?" :paramsDesc="['设备的 `codename` 例如 小米 2s 为 `aries`. 国际版的 `codename` 一般以 `_global` 结尾. 可查阅 MIUI 线刷包下载页面', '类型', '地区, 默认为 `cn`']">
 
-| 类型  | type    |
-| --- | ------- |
+| 类型   | type    |
+| ------ | ------- |
 | 稳定版 | release |
 | 开发版 | dev     |
 
-| 地区  | region |
-| --- | ------ |
+| 地区   | region |
+| ------ | ------ |
 | 国内版 | cn     |
 | 国际版 | global |
 
 </Route>
+
+## Neat Download Manager
+
+### Download
+
+<Route author="nczitzk" example="/neatdownloadmanager/download" path="/neatdownloadmanager/download/:os?" :paramsDesc="['操作系统，可选 windows 或 macos，默认为全部']"/>
 
 ## Nintendo Switch
 
 ### Switch 本体更新情报（日本）
 
 见 [#nintendo](/game.html#nintendo)
+
+## Not a Tesla App
+
+### 特斯拉系统更新
+
+<Route author="mrbruce516" example="/notateslaapp/ota" path="/notateslaapp/ota" radar="1"/>
 
 ## NPM
 
@@ -330,6 +447,21 @@ pageClass: routes
 
 <Route author="cielpy" example="/nvidia/webdriverupdate" path="/nvidia/webdriverupdate"/>
 
+## O\&O Software
+
+### Changelog
+
+<Route author="nczitzk" example="/oo-software/changelog/shutup10" path="/oo-software/changelog/:id" :paramsDesc="['软件 id，见下表，默认为 shutup10，可在对应软件页中找到']">
+
+| Software       | Id          |
+| -------------- | ----------- |
+| O&O ShutUp10++ | shutup10    |
+| O&O AppBuster  | ooappbuster |
+| O&O Lanytix    | oolanytix   |
+| O&O DeskInfo   | oodeskinfo  |
+
+</Route>
+
 ## Obsidian
 
 ### Announcements
@@ -342,11 +474,23 @@ pageClass: routes
 
 <Route author="nczitzk" example="/onenotegem/release" path="/onenotegem/release"/>
 
+## OpenWrt
+
+### Releases
+
+<Route author="DIYgod" example="/openwrt/releases/xiaomi/xiaomi_redmi_router_ac2100" path="/releases/:brand/:model" :paramsDesc="['产品型号，可在 `Table of Hardware` -> `Device Page` 的 URL 中找到', '同上']"/>
+
 ## PlayStation
 
 ### PlayStation 4 系统更新纪录
 
 见 [#playstation](/game.html#playstation)
+
+## Postman
+
+### Release Notes
+
+<Route author="nczitzk" example="/postman/release-notes" path="/postman/release-notes"/>
 
 ## Potplayer
 
@@ -355,10 +499,22 @@ pageClass: routes
 <Route author="nczitzk" example="/potplayer/update" path="/potplayer/update/:language?" :paramsDesc="['语言，见下表，默认为英语']">
 
 | 한국어 | 中文 (简体) | 中文 (繁体) | ENGLISH | Українська | РУССКИЙ | Polski |
-| --- | ------- | ------- | ------- | ---------- | ------- | ------ |
-| ko  | zh_CN   | zh_TW   | en      | uk         | ru      | pl     |
+| ------ | ----------- | ----------- | ------- | ---------- | ------- | ------ |
+| ko     | zh_CN       | zh_TW       | en      | uk         | ru      | pl     |
 
 </Route>
+
+## PuTTY
+
+### Change Log
+
+<Route author="nczitzk" example="/putty/changes" path="/putty/changes"/>
+
+## qBittorrent
+
+### 消息
+
+<Route author="TonyRL" example="/qbittorrent/news" path="/qbittorrent/news" radar="1" rssbud="1"/>
 
 ## QNAP
 
@@ -389,6 +545,12 @@ pageClass: routes
 ### 版本更新
 
 <Route author="Cesaryuan nczitzk" example="/quicker/versions" path="/quicker/versions"/>
+
+## RemNote
+
+### 变更日志
+
+<Route author="TonyRL" example="/remnote/changelog" path="/remnote/changelog" radar="1" rssbud="1"/>
 
 ## RescueTime
 
@@ -450,6 +612,20 @@ pageClass: routes
 
 <Route author="Jeason0228" example="/sketch/updates" path="/sketch/updates"  />
 
+## Sony
+
+### Software Downloads
+
+<Route author="NavePnow" example="/sony/downloads/product/nw-wm1am2" path="/sony/downloads/:productType/:productId" :paramsDesc="['产品类别', '产品Id']">
+
+::: tip 提示
+
+打开 `https://www.sony.com/electronics/support` 并搜索对应的产品，比如 `Sony A7M4` 对应的网站是 `https://www.sony.com/electronics/support/e-mount-body-ilce-7-series/ilce-7m4/downloads`，`productType` 为 `e-mount-body-ilce-7-series`, `productId` 为 `ilce-7m4`
+
+:::
+
+</Route>
+
 ## Thunderbird
 
 ### 更新日志
@@ -462,15 +638,78 @@ pageClass: routes
 
 <Route author="nczitzk" example="/totalcommander/whatsnew" path="/totalcommander/whatsnew"/>
 
+## TradingView
+
+### Blog
+
+<Route author="nczitzk" example="/tradingview/blog/en" path="/tradingview/blog/:language?" :paramsDesc="['语言，见下表，默认为 en 即英语']">
+
+语言
+
+| 编号 | 语言                |
+| ---- | ------------------- |
+| en   | English             |
+| ru   | Русский             |
+| ja   | 日本語              |
+| es   | Español             |
+| tr   | Türkçe              |
+| ko   | 한국어              |
+| it   | Italiano            |
+| pt   | Português do Brasil |
+| de   | Deutsch             |
+| fr   | Français            |
+| pl   | Polski              |
+| id   | Bahasa Indonesia    |
+| my   | Bahasa Malaysia     |
+| tw   | 繁體                |
+| cn   | 简体                |
+| vi   | Tiếng Việt          |
+| th   | ภาษาไทย             |
+| sv   | Svenska             |
+| ar   | العربية             |
+| il   | Hebrew              |
+
+</Route>
+
 ## Typora
 
 ### Changelog
 
-<Route author="cnzgray" example="/typora/changelog" path="/typora/changelog"/>
+<Route author="cnzgray" example="/typora/changelog" path="/typora/changelog" radar="1"/>
 
 ### Dev Release Changelog
 
-<Route author="nczitzk" example="/typora/changelog-dev/macOS" path="/typora/changelog-dev/:os" :paramsDesc="['操作系统类型, 可选 `macOS` 或 `Windows` 与 `Linux`，默认为 `macOS`']"/>
+<Route author="nczitzk" example="/typora/changelog/dev" path="/typora/changelog/dev" radar="1"/>
+
+## VMware
+
+### Flings
+
+<Route author="nczitzk" example="/vmware/flings" path="/vmware/flings"/>
+
+## Western Digital
+
+### Download
+
+<Route author="nczitzk" example="/wdc/download/279" path="/wdc/download/:id?" :paramsDesc="['软件 id，可在对应软件页 URL 中找到，默认为 279，即 Western Digital Dashboard']"/>
+
+## winstall
+
+### 应用更新
+
+<Route author="TonyRL" example="/winstall/Mozilla.Firefox" path="/winstall/:appId" :paramsDesc="['应用名']" radar="1"/>
+
+## WizFile
+
+### 更新日志
+
+<Route author="Fatpandac" example="/wizfile/updates" path="/wizfile/updates"/>
+
+## WizTree
+
+### What's New
+
+<Route author="nczitzk" example="/diskanalyzer/whats-new" path="/diskanalyzer/whats-new"/>
 
 ## X410
 
@@ -502,6 +741,12 @@ pageClass: routes
 
 <Route author="nczitzk" example="/xyplorer/whatsnew" path="/xyplorer/whatsnew"/>
 
+## Zotero
+
+### 版本历史
+
+<Route author="jasongzy" example="/zotero/versions" path="/zotero/versions"/>
+
 ## 怪物猎人世界
 
 ### 更新
@@ -514,17 +759,15 @@ pageClass: routes
 
 <Route author="Fatpandac" example="/asus/bios/RT-AX88U" path="/asus/bios/:model" :paramsDesc="['产品型号，可在产品页面找到']"/>
 
+### GPU Tweak
+
+<Route author="TonyRL" example="/asus/gpu-tweak" path="/asus/gpu-tweak" radar="1" rssbud="1"/>
+
 ## 蒲公英应用分发
 
 ### app 更新
 
 <Route author="zytomorrow" example="/pgyer/:app" path="/pgyer/kz-test" :paramsDesc="['app为下载页最后的路径']" radar="1" rssbud="1"/>
-
-## 特斯拉系统更新
-
-### 版本详细信息
-
-<Route author="mrbruce516" example="/tesla" path="/tesla/update"/>
 
 ## 腾讯云移动直播 SDK
 
@@ -546,14 +789,14 @@ pageClass: routes
 
 标签
 
-| uTools | 插件发布    |
-| ------ | ------- |
-| utools | plugins |
+| uTools | 插件发布 |
+| ------ | -------- |
+| utools | plugins  |
 
 排序
 
-| 最新回复 | 热门回复          | 新鲜出炉       | 陈年旧贴      |
-| ---- | ------------- | ---------- | --------- |
-|      | -commentCount | -createdAt | createdAt |
+| 最新回复 | 热门回复      | 新鲜出炉   | 陈年旧贴  |
+| -------- | ------------- | ---------- | --------- |
+|          | -commentCount | -createdAt | createdAt |
 
 </Route>
