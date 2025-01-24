@@ -1248,6 +1248,9 @@
   "/cdzjryb/zw/projectList": [
     "TonyRL"
   ],
+  "/ce/district/:category?": [
+    "cscnk52"
+  ],
   "/cebbank/quotation/all": [
     "linbuxiao"
   ],
@@ -2140,6 +2143,9 @@
   ],
   "/easynomad/": [
     "jiangsong216"
+  ],
+  "/ebc/realtime/:category?": [
+    "quiniapiezoelectricity"
   ],
   "/ecnu/acm/contest/:category?": [
     "a180285"
@@ -7557,11 +7563,9 @@
   "/wfu/news/:type?": [
     "cccht"
   ],
-  "/whitehouse/briefing-room/:category?": [
-    "nczitzk"
-  ],
-  "/whitehouse/ostp": [
-    "LyleLee"
+  "/whitehouse/news/:category?": [
+    "nczitzk",
+    "hkamran80"
   ],
   "/who/news-room/:category?/:language?": [
     "LogicJake",
