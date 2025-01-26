@@ -185,6 +185,18 @@
   "/4ksj/:id?": [
     "nczitzk"
   ],
+  "/4kup/category/:category": [
+    "AiraNadih"
+  ],
+  "/4kup/": [
+    "AiraNadih"
+  ],
+  "/4kup/popular/:period": [
+    "AiraNadih"
+  ],
+  "/4kup/tag/:tag": [
+    "AiraNadih"
+  ],
   "/500px/tribe/set/:id": [
     "TonyRL"
   ],
@@ -1564,6 +1576,18 @@
     "btdwv",
     "marvolo666",
     "yan12125"
+  ],
+  "/cosplaytele/category/:category": [
+    "AiraNadih"
+  ],
+  "/cosplaytele/": [
+    "AiraNadih"
+  ],
+  "/cosplaytele/popular/:period": [
+    "AiraNadih"
+  ],
+  "/cosplaytele/tag/:tag": [
+    "AiraNadih"
   ],
   "/counter-strike/news/:category?/:language?": [
     "nczitzk"
