@@ -3588,8 +3588,19 @@
   },
   "6park": {
     "routes": {
-      "/:id?/:type?/:keyword?": {
-        "path": "/:id?/:type?/:keyword?",
+      "/index/:id?/:type?/:keyword?": {
+        "path": "/index/:id?/:type?/:keyword?",
+        "name": "首页",
+        "maintainers": [
+          "nczitzk",
+          "cscnk52"
+        ],
+        "example": "/6park/index",
+        "parameters": {
+          "id": "分站，见下表，默认为史海钩沉",
+          "type": "类型，可选值为 gold、type，默认为空",
+          "keyword": "关键词，可选，默认为空"
+        },
         "radar": [
           {
             "source": [
@@ -3599,8 +3610,7 @@
             "target": "/:id?"
           }
         ],
-        "name": "Unknown",
-        "maintainers": [],
+        "description": "| 婚姻家庭 | 魅力时尚 | 女性频道 | 生活百态 | 美食厨房 | 非常影音 | 车迷沙龙 | 游戏天地 | 卡通漫画 | 体坛纵横 | 运动健身 | 电脑前线 | 数码家电 | 旅游风向 | 摄影部落 | 奇珍异宝 | 笑口常开 | 娱乐八卦 | 吃喝玩乐 | 文化长廊 | 军事纵横 | 百家论坛 | 科技频道 | 爱子情怀 | 健康人生 | 博论天下 | 史海钩沉 | 网际谈兵 | 经济观察 | 谈股论金 | 杂论闲侃 | 唯美乐园 | 学习园地 | 命理玄机 | 宠物情缘 | 网络歌坛 | 音乐殿堂 | 情感世界 |\n|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|\n| life9    | life1    | chan10   | life2    | life6    | fr       | enter7   | enter3   | enter6   | enter5   | sport    | know1    | chan6    | life7    | chan8    | page     | enter1   | enter8   | netstar  | life10   | nz       | other    | chan2    | chan5    | life5    | bolun    | chan1    | military | finance  | chan4    | pk       | gz1      | gz2      | gz3      | life8    | chan7    | enter4   | life3    |",
         "location": "index.ts"
       },
       "/news/:site?/:id?/:keyword?": {
@@ -3614,8 +3624,17 @@
             "target": "/:id?"
           }
         ],
-        "name": "Unknown",
-        "maintainers": [],
+        "name": "新闻栏目",
+        "maintainers": [
+          "nczitzk",
+          "cscnk52"
+        ],
+        "parameters": {
+          "site": "分站，可选newspark、local，默认为 newspark",
+          "id": "栏目 id，可选，默认为空",
+          "keyword": "关键词，可选，默认为空"
+        },
+        "description": "::: tip 提示\n若订阅 [时政](https://www.6parknews.com/newspark/index.php?type=1)，其网址为 <https://www.6parknews.com/newspark/index.php?type=1>，其中 `newspark` 为分站，`1` 为栏目 id。\n若订阅 [美国](https://local.6parknews.com/index.php?type_id=1)，其网址为 <https://local.6parknews.com/index.php?type_id=1>，其中 `local` 为分站，`1` 为栏目 id。\n:::",
         "location": "news.ts"
       }
     },
@@ -70673,6 +70692,332 @@
     "name": "公視新聞網",
     "url": "news.pts.org.tw",
     "lang": "zh-TW"
+  },
+  "publico": {
+    "routes": {
+      "/ciencias/:subsection?": {
+        "path": "/ciencias/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/ciencias",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/ciencias"
+            ],
+            "target": "/ciencias"
+          }
+        ],
+        "name": "Ciencias",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "ciencias.ts"
+      },
+      "/culturas/:subsection?": {
+        "path": "/culturas/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/culturas",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/culturas"
+            ],
+            "target": "/culturas"
+          }
+        ],
+        "name": "Culturas",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "culturas.ts"
+      },
+      "/economia/:subsection?": {
+        "path": "/economia/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/economia",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/economia"
+            ],
+            "target": "/economia"
+          }
+        ],
+        "name": "Economia",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "economia.ts"
+      },
+      "/internacional/:subsection?": {
+        "path": "/internacional/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/internacional",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/internacional"
+            ],
+            "target": "/internacional"
+          }
+        ],
+        "name": "Internacional",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "internacional.ts"
+      },
+      "/mujer/:subsection?": {
+        "path": "/mujer/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/mujer",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/mujer"
+            ],
+            "target": "/mujer"
+          }
+        ],
+        "name": "Mujer",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "mujer.ts"
+      },
+      "/opinion/:subsection?": {
+        "path": "/opinion/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/opinion",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/opinion"
+            ],
+            "target": "/opinion"
+          }
+        ],
+        "name": "Opinión",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "opinion.ts"
+      },
+      "/politica/:subsection?": {
+        "path": "/politica/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/politica",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/politica"
+            ],
+            "target": "/politica"
+          }
+        ],
+        "name": "Política",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "politica.ts"
+      },
+      "/public": {
+        "path": "/public",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/public",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/public"
+            ],
+            "target": "/public"
+          }
+        ],
+        "name": "Public",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "public.ts"
+      },
+      "/sociedad/:subsection?": {
+        "path": "/sociedad/:subsection?",
+        "parameters": {
+          "subsection": {
+            "description": "Filter by subsection. Check the subsections available on the newspaper's website."
+          }
+        },
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/sociedad",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/sociedad"
+            ],
+            "target": "/sociedad"
+          }
+        ],
+        "name": "Sociedad",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "sociedad.ts"
+      },
+      "/tremending": {
+        "path": "/tremending",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/publico/tremending",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": true,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "publico.es/tremending"
+            ],
+            "target": "/tremending"
+          }
+        ],
+        "name": "Tremending",
+        "maintainers": [
+          "adrianrico97"
+        ],
+        "location": "tremending.ts"
+      }
+    },
+    "name": "Público",
+    "url": "publico.es"
   },
   "pubmed": {
     "routes": {
