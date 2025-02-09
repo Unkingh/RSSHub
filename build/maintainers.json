@@ -1569,11 +1569,9 @@
   "/coolapk/user/:uid/dynamic": [
     "xizeyoupan"
   ],
-  "/coomer/artist/:id": [
-    "nczitzk"
-  ],
-  "/coomer/posts": [
-    "nczitzk"
+  "/coomer/:source?/:id?": [
+    "nczitzk",
+    "AiraNadih"
   ],
   "/copernicium/:category?": [
     "dzx-dzx"
@@ -5414,7 +5412,7 @@
   "/panewslab/topic/:id": [
     "nczitzk"
   ],
-  "/papers/arxiv/:category{.+}?": [
+  "/papers/category/:id{.+}?": [
     "nczitzk",
     "Muyun99"
   ],
